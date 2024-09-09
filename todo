@@ -1,0 +1,52 @@
+HOPELINK ORPHANAGE HUB
+
+ROLE 
+	ADMIN
+	USER (Orphanange Founder, Public)
+
+USER
+	Orphanage Founder 
+		------ Signup (Name, Location, Category="Child, Old, Mentally Disabled, Physically Disabled",Username, Email, Password, Image)
+		------ SignIn
+		------ PAGE (HOME PAGE, ORPHANAGES, FEEDBACK)
+
+	Public
+		------ Signup (Username, Password, Email)
+		------ SignIn
+		------ PAGE (HOME PAGE, ORPHANAGES, Our Members, FEEDBACK)
+
+ADMIN
+	Sign-In --- Username, Password
+	Members --- 
+	Public  --- 
+	Orphanages ---- 
+
+
+----------------------------------------------------------------------------------------
+
+DATABASE 
+
+
+USER TABLE
+
+ID
+USERNAME
+EMAIL
+PASSWORD
+CATEGORY ---- (ORPHANAGE, PUBLIC)
+
+
+ORPHANAGE TABLE
+
+ID
+ORPHAN_ID
+NAME
+LOCATION
+Category="Child, Old, Mentally Disabled, Physically Disabled"
+IMAGE
+STATUS (0/1)
+
+1 guru guru@gmail.com 123 orphan
+
+----------------------------------------------------------------------
+
