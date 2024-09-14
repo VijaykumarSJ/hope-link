@@ -14,6 +14,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Box Icons  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="assets/css/home.css" rel="stylesheet" />
     </head>
@@ -28,8 +30,8 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                             <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="orphanages.php">Orphanages</a></li>
-                            <li class="nav-item"><a class="nav-link" href="members.php">Our Members</a></li>
                             <li class="nav-item"><a class="nav-link" href="feedback.php">Feedback</a></li>
+                            <li class="nav-item"><a class="nav-link" href="logout.php"><i class='bx bx-log-out'></i></a></li>  
                         </ul>
                     </div>
                 </div>

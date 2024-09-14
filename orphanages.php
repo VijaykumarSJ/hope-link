@@ -14,7 +14,7 @@
                             <!-- Experience Card 1-->
                             
                             <?php
-                        $sql = "SELECT * FROM orphanage_tbl";
+                        $sql = "SELECT * FROM orphanage_tbl WHERE status=1";
                         $result = $conn->query($sql);
                         
                         if ($result->num_rows > 0) {
@@ -41,7 +41,7 @@
                           }
                         }
                           else {
-                            echo "0 results";
+                            echo "No Orphanages";
                           }
                           $conn->close();
                     ?>

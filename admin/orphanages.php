@@ -25,6 +25,7 @@
             </div>
 
             <!-- CONTENT START -->
+            <h1 class="content-title">Orphanages</h1>
 
             <table class="table_container">
                     <thead>
@@ -52,6 +53,8 @@
                         <td><?php echo $row["orphanage_category"]; ?></td>
                         <td><?php echo $row["orphanage_location"]; ?></td>
                         <td>
+                            <?php $icon = ($row["status"]==0) ? "fa-toggle-off" : "fa-toggle-on" ?>
+                            <a href="config/status.php?id=<?php echo $row["id"]; ?>&status=<?php echo $row["status"]; ?>"><i class="fa-solid <?php echo $icon; ?>" aria-hidden="true"></i></a>
                             <a href="config/deleteRecord.php?table=orphanage_tbl&id=<?php echo $row["id"]; ?>"><i class="fa-solid fa-trash"></i></a>
                         </td>
                       </tr>

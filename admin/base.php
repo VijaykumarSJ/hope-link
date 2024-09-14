@@ -13,6 +13,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="myorphanages.php">
+                        <span class="icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+                        <span class="title">My Orphanages</span>
+                    </a>
+                </li>
+                <li>
                     <a href="orphanages.php">
                         <span class="icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
                         <span class="title">Orphanages</span>

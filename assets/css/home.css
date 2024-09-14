@@ -11732,3 +11732,8 @@ html {
     left: -2vw;
   }
 }
+
+.bx-log-out
+{
+  font-size: 1.5em;
+}
