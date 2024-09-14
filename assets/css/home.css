@@ -8177,6 +8177,8 @@ textarea.form-control-lg {
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
 }
 
+
+
 .text-secondary {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
@@ -11725,4 +11727,46 @@ html {
 .bx-log-out
 {
   font-size: 1.5em;
+}
+
+/*FILTER OPTION CSS*/
+
+
+
+.advanced{
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active
+
+
+ {
+    color: #fff;
+    background-color: #00838f !important;
+    border-color: #00838f !important;
+    box-shadow: none;
+}
+
+
+.advanced{
+
+    color: #00838f !important;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid #00838f;
+
+
+}
+
+.light-blue
+{
+  background-color: #F0F8FF;
 }

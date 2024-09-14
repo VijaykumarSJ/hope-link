@@ -17,7 +17,6 @@ if(isset($_POST['submit']))
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-	<!-- Login 1 - Bootstrap Brain Component -->
 <div class="bg-light py-md-5">
   <div class="container mt-5">
     <div class="row justify-content-md-center">

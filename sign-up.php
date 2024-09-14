@@ -178,7 +178,40 @@
                                     <i class="fa fa-map-marker text-muted"></i>
                                 </span>
                             </div>
-                            <input id="orphanage_location" type="text" name="orphanage_location" placeholder="Location" class="form-control bg-white border-left-0 border-md" required>
+                            <select id="orphanage_location" name="orphanage_location" class="form-control custom-select bg-white border-left-0 border-md" required>
+                                <option value="" selected disabled>Select the District</option>
+                                <option value="chennai">Chennai</option>
+                                <option value="coimbatore">Coimbatore</option>
+                                <option value="cuddalore">Cuddalore</option>
+                                <option value="dharmapuri">Dharmapuri</option>
+                                <option value="dindigul">Dindigul</option>
+                                <option value="erode">Erode</option>
+                                <option value="kancheepuram">Kancheepuram</option>
+                                <option value="kanyakumari">Kanyakumari</option>
+                                <option value="karur">Karur</option>
+                                <option value="krishnagiri">Krishnagiri</option>
+                                <option value="madurai">Madurai</option>
+                                <option value="nagapattinam">Nagapattinam</option>
+                                <option value="namakkal">Namakkal</option>
+                                <option value="nilgiris">Nilgiris</option>
+                                <option value="perambalur">Perambalur</option>
+                                <option value="pudukkottai">Pudukkottai</option>
+                                <option value="ramanathapuram">Ramanathapuram</option>
+                                <option value="salem">Salem</option>
+                                <option value="sivagangai">Sivagangai</option>
+                                <option value="tenkasi">Tenkasi</option>
+                                <option value="thanjavur">Thanjavur</option>
+                                <option value="theni">Theni</option>
+                                <option value="thoothukudi">Thoothukudi</option>
+                                <option value="tiruchirappalli">Tiruchirappalli</option>
+                                <option value="tirunelveli">Tirunelveli</option>
+                                <option value="tirupur">Tirupur</option>
+                                <option value="tiruvallur">Tiruvallur</option>
+                                <option value="tiruvannamalai">Tiruvannamalai</option>
+                                <option value="vellore">Vellore</option>
+                                <option value="villupuram">Villupuram</option>
+                                <option value="virudhunagar">Virudhunagar</option>
+                            </select>
                         </div>
 
                         <!-- Orphanage User Name -->
@@ -210,7 +243,7 @@
                                     <i class="fa fa-lock text-muted"></i>
                                 </span>
                             </div>
-                            <input id="orphanage_password" type="text" name="orphanage_password" placeholder="Password" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="orphanage_password" type="password" name="orphanage_password" placeholder="Password" class="form-control bg-white border-left-0 border-md" required>
                         </div>
                     </div>
 

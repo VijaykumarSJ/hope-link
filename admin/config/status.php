@@ -9,7 +9,7 @@ $status =  $_GET['status'];
 $value = ($status==1) ? 0 : 1;
 
 
-    $sql = "UPDATE orphanage_tbl SET status = $value";
+    $sql = "UPDATE orphanage_tbl SET status = $value WHERE id = $id";
 
     if($conn->query($sql)===TRUE)
     {

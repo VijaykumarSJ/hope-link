@@ -26,19 +26,17 @@
 
             <!-- CONTENT START -->
             <h1 class="content-title">Orphanages</h1>
-
-            <table class="table_container">
-                    <thead>
-                      <tr>
-                        <th><h1>S.No.</h1></th>
-                        <th><h1>Name</h1></th>
-                        <th><h1>Category</h1></th>
-                        <th><h1>Location</h1></th>
-                        <th><h1>Action</h1></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
+            <div class="container2">
+            <div class="table">
+        <div class="table-header">
+            <div class="header__item"><a id="name" class="filter__link" href="#">S.No.</a></div>
+            <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Name</a></div>
+            <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Category</a></div>
+            <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Location</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Action</a></div>
+        </div>
+        <div class="table-content"> 
+            <?php
                         $sql = "SELECT * FROM orphanage_tbl";
                         $result = $conn->query($sql);
                         
@@ -47,26 +45,30 @@
                           $i = 1;
                           while($row = $result->fetch_assoc()) {
                       ?>
-                      <tr>
-                        <td><?php echo $i++; ?></td>
-                        <td><?php echo $row["orphanage_name"]; ?></td>
-                        <td><?php echo $row["orphanage_category"]; ?></td>
-                        <td><?php echo $row["orphanage_location"]; ?></td>
-                        <td>
-                            <?php $icon = ($row["status"]==0) ? "fa-toggle-off" : "fa-toggle-on" ?>
+            <div class="table-row">     
+                <div class="table-data"><?php echo $i++; ?></div>
+                <div class="table-data"><?php echo $row["orphanage_name"]; ?></div>
+                <div class="table-data"><?php echo $row["orphanage_category"]; ?></div>
+                <div class="table-data"><?php echo $row["orphanage_location"]; ?></div>
+                <div class="table-data">
+
+                    <?php $icon = ($row["status"]==0) ? "fa-toggle-off" : "fa-toggle-on" ?>
+                    
                             <a href="config/status.php?id=<?php echo $row["id"]; ?>&status=<?php echo $row["status"]; ?>"><i class="fa-solid <?php echo $icon; ?>" aria-hidden="true"></i></a>
+
                             <a href="config/deleteRecord.php?table=orphanage_tbl&id=<?php echo $row["id"]; ?>"><i class="fa-solid fa-trash"></i></a>
-                        </td>
-                      </tr>
-                      <?php
+                </div>
+            </div>
+            <?php
                           }
                         }
                           else {
                             echo "0 results";
                           }
                           $conn->close();
-                    ?></tbody>
-                  </table>
+                    ?>
+        </div>  
+    </div></div>
             
             <!-- CONTENT END -->
          </div>

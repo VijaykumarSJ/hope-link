@@ -26,17 +26,16 @@
 
             <!-- CONTENT START -->
 
-            <table class="table_container">
-                    <thead>
-                      <tr>
-                        <th><h1>S.No.</h1></th>
-                        <th><h1>Name</h1></th>
-                        <th><h1>Email</h1></th>
-                        <th><h1>Action</h1></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
+            <div class="container2">
+            <div class="table">
+        <div class="table-header">
+            <div class="header__item"><a id="name" class="filter__link" href="#">S.No.</a></div>
+            <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Name</a></div>
+            <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Email</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Action</a></div>
+        </div>
+        <div class="table-content"> 
+            <?php
                         $sql = "SELECT * FROM user_tbl";
                         $result = $conn->query($sql);
                         
@@ -45,23 +44,24 @@
                           $i = 1;
                           while($row = $result->fetch_assoc()) {
                       ?>
-                      <tr>
-                        <td><?php echo $i++; ?></td>
-                        <td><?php echo $row["username"]; ?></td>
-                        <td><?php echo $row["email"]; ?></td>
-                        <td>
-                            <a href="config/deleteRecord.php?table=user_tbl&id=<?php echo $row["id"]; ?>"><i class="fa-solid fa-trash"></i></a>
-                        </td>
-                      </tr>
-                      <?php
+            <div class="table-row">     
+                <div class="table-data"><?php echo $i++; ?></div>
+                <div class="table-data"><?php echo $row["username"]; ?></div>
+                <div class="table-data"><?php echo $row["email"]; ?></div>
+                <div class="table-data">
+                        <a href="config/deleteRecord.php?table=user_tbl&id=<?php echo $row["id"]; ?>"><i class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+           <?php
                           }
                         }
                           else {
                             echo "0 results";
                           }
                           $conn->close();
-                    ?></tbody>
-                  </table>
+                    ?>
+        </div>  
+    </div></div>
             
             <!-- CONTENT END -->
          </div>
