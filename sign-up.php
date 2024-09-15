@@ -335,6 +335,7 @@
         public_password.required = false;
 
         orphanage.querySelectorAll('input').forEach((e)=>{e.required=true;})
+        document.getElementById('orphanage_location').required = true;
         document.getElementById('orphanage_category').required = true;
     } else if (role.value === 'Public') {
         orphanage.style.display = "none";
@@ -347,6 +348,7 @@
 
         orphanage.querySelectorAll('input').forEach((e)=>{e.required=false;})
         document.getElementById('orphanage_category').required = false;
+        document.getElementById('orphanage_location').required = false;
     }
 }
 </script>

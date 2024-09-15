@@ -1,3 +1,13 @@
+<?php
+    
+    session_start();
+
+    if(!isset($_SESSION['admin']))
+    {
+        header('location: index.php');
+    }
+
+?>
 <div class="navigation">
             <ul>
                 <li>
@@ -31,13 +41,19 @@
                     </a>
                 </li>
                 <li>
+                    <a href="feedback.php">
+                        <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+                        <span class="title">Feedback</span>
+                    </a>
+                </li>
+                <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="cog-outline"></ion-icon></span>
                         <span class="title">Settings</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="logout.php">
                         <span class="icon"><ion-icon name="power-outline"></ion-icon></span>
                         <span class="title">Log-out</span>
                     </a>

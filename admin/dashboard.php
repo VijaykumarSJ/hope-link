@@ -49,7 +49,7 @@
                         <div class="cardname">Registered</div>
                     </div>
                     <div class="iconbx">
-                        <ion-icon name="eye-outline"></ion-icon>
+                        <ion-icon name="person-circle-outline"></ion-icon>
                     </div>
                 </div>
                 <div class="card">
@@ -58,7 +58,7 @@
                         <div class="cardname">Entered Orphanages</div>
                     </div>
                     <div class="iconbx">
-                        <ion-icon name="pin-outline"></ion-icon>                    
+                        <ion-icon name="person-circle-outline"></ion-icon>                    
                     </div>
                 </div>
                 <div class="card">
@@ -67,7 +67,7 @@
                         <div class="cardname">Users</div>
                     </div>
                     <div class="iconbx">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>                    
+                        <ion-icon name="person-circle-outline"></ion-icon>              
                     </div>
                 </div>
             </div>

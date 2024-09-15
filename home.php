@@ -4,11 +4,10 @@
                 <div class="container px-5 pb-5">
                     <div class="row gx-5 align-items-center">
                         <div class="col-xxl-12">
+                            <h4 class="display-6 fw-bolder"><span class="text-gradient d-inline">Welcome! <?php echo $_SESSION['username']; ?></span></h4>
                             <!-- Header profile picture-->
                             <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                                 <div class="profile">
-                                    <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                    <!-- Watch a tutorial on how to do this on YouTube (link)-->
                                     <img class="profile-img" src="assets/images/profile.png" alt="..." />
                                 </div>
                             </div>

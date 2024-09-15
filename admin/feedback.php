@@ -25,20 +25,19 @@
             </div>
 
             <!-- CONTENT START -->
-            <h1 class="content-title"><span>My Orphanages</span> <a href="addorphanage.php"><i class="fa-solid fa-plus"></i></a> </h1>
-
+            <h1 class="content-title">Feedback</h1>
             <div class="container2">
             <div class="table">
         <div class="table-header">
             <div class="header__item"><a id="name" class="filter__link" href="#">S.No.</a></div>
             <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Name</a></div>
-            <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Category</a></div>
-            <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Location</a></div>
-            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Action</a></div>
+            <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Email</a></div>
+            <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Phone Number</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Message</a></div>
         </div>
         <div class="table-content"> 
             <?php
-                        $sql = "SELECT * FROM myorphanages_tbl";
+                        $sql = "SELECT * FROM feedback_tbl";
                         $result = $conn->query($sql);
                         
                         if ($result->num_rows > 0) {
@@ -48,13 +47,10 @@
                       ?>
             <div class="table-row">     
                 <div class="table-data"><?php echo $i++; ?></div>
-                <div class="table-data"><?php echo $row["orphanage_name"]; ?></div>
-                <div class="table-data"><?php echo $row["orphanage_category"]; ?></div>
-                <div class="table-data"><?php echo $row["orphanage_location"]; ?></div>
-                <div class="table-data">
-
-                   <a href="config/deleteRecord.php?table=myorphanages_tbl&id=<?php echo $row["id"]; ?>"><i class="fa-solid fa-trash"></i></a>
-                </div>
+                <div class="table-data"><?php echo $row["name"]; ?></div>
+                <div class="table-data"><?php echo $row["email"]; ?></div>
+                <div class="table-data"><?php echo $row["phone"]; ?></div>
+                <div class="table-data"><?php echo $row["message"]; ?></div>
             </div>
             <?php
                           }
@@ -74,4 +70,8 @@
 </html>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="js/script.js"></script>
+<script type="text/javascript">
+    if ( window.history.replaceState ) {
+window.history.replaceState( null, null, window.location.href );
+}
+  </script>

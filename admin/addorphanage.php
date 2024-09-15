@@ -19,7 +19,7 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
                 <div class="user">
-                    <img src="../images/bg-2.jpeg">
+                    <img src="../assets/images/hand.jpg">
                 </div>
             </div>
 
@@ -51,7 +51,40 @@
           </div>
           <div class="input-box">
             <span class="details">Location</span>
-            <input type="text" placeholder="Enter orphanage Location" name="orphanage_location" required>
+            <select id="orphanage_location" name="orphanage_location" required>
+                                <option value="" selected disabled>Select the District</option>
+                                <option value="chennai">Chennai</option>
+                                <option value="coimbatore">Coimbatore</option>
+                                <option value="cuddalore">Cuddalore</option>
+                                <option value="dharmapuri">Dharmapuri</option>
+                                <option value="dindigul">Dindigul</option>
+                                <option value="erode">Erode</option>
+                                <option value="kancheepuram">Kancheepuram</option>
+                                <option value="kanyakumari">Kanyakumari</option>
+                                <option value="karur">Karur</option>
+                                <option value="krishnagiri">Krishnagiri</option>
+                                <option value="madurai">Madurai</option>
+                                <option value="nagapattinam">Nagapattinam</option>
+                                <option value="namakkal">Namakkal</option>
+                                <option value="nilgiris">Nilgiris</option>
+                                <option value="perambalur">Perambalur</option>
+                                <option value="pudukkottai">Pudukkottai</option>
+                                <option value="ramanathapuram">Ramanathapuram</option>
+                                <option value="salem">Salem</option>
+                                <option value="sivagangai">Sivagangai</option>
+                                <option value="tenkasi">Tenkasi</option>
+                                <option value="thanjavur">Thanjavur</option>
+                                <option value="theni">Theni</option>
+                                <option value="thoothukudi">Thoothukudi</option>
+                                <option value="tiruchirappalli">Tiruchirappalli</option>
+                                <option value="tirunelveli">Tirunelveli</option>
+                                <option value="tirupur">Tirupur</option>
+                                <option value="tiruvallur">Tiruvallur</option>
+                                <option value="tiruvannamalai">Tiruvannamalai</option>
+                                <option value="vellore">Vellore</option>
+                                <option value="villupuram">Villupuram</option>
+                                <option value="virudhunagar">Virudhunagar</option>
+                            </select>
           </div>
           <div class="input-box">
             <span class="details">Contact</span>

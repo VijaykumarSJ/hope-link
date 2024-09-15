@@ -11,6 +11,7 @@ $sql = "DELETE FROM $table WHERE id=$id";
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";
   if($table == "orphanage_tbl") { $location = "../orphanages.php"; }
+  elseif($table == "myorphanages_tbl") { $location = "../myorphanages.php"; }
   else { $location = "../users.php"; }
 
   header('Location: '.$location);

@@ -1,8 +1,11 @@
 <?php
+                session_start();
+
 if(isset($_POST['submit'])) 
 { 
     if( $_POST['email'] =='hope' && $_POST['password'] == 'hope123')
     {
+      $_SESSION['admin'] = "Hope-Link-Admin";
         header('Location: dashboard.php');
     } 
 }
@@ -17,6 +20,11 @@ if(isset($_POST['submit']))
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
+  <?php
+
+  if(!isset($_SESSION['admin']))
+                {
+                  ?>
 <div class="bg-light py-md-5">
   <div class="container mt-5">
     <div class="row justify-content-md-center">
@@ -68,5 +76,12 @@ if(isset($_POST['submit']))
     </div>
   </div>
 </div>
+<?php
+  }
+  else
+  {
+      header('location: dashboard.php');
+  }
+  ?>
 </body>
 </html>
