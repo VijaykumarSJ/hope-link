@@ -11732,7 +11732,11 @@ html {
 
 /*FILTER OPTION CSS*/
 
-
+option
+{
+  background-color: #fff;
+  color: #1e30f3;
+}
 
 .advanced{
 
