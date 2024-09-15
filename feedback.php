@@ -66,6 +66,10 @@
                     </div>
                 </div>
             </section>
+             <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
             <script type="text/javascript">
     if ( window.history.replaceState ) {
 window.history.replaceState( null, null, window.location.href );

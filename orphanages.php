@@ -6,7 +6,7 @@
    <!-- Page Content-->
             <div class="container px-5 my-5">
                 <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Our Orphanages</span></h1>
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Our Members</span></h1>
                 </div>
                 <!-- FILTER OPTION -->
                 <div class="container mb-5">
@@ -128,7 +128,13 @@
                                                 <div class="small fw-bolder"><?php echo $row["orphanage_name"]; ?></div>
                                             <div class="text-primary fw-bolder mb-2 mt-2"><?php echo $row["orphanage_category"]; ?></div>
                                                 <div class="small text-muted mb-2"><?php echo $row["orphanage_location"]; ?></div>
-                                                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div></div>
+                                                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div>
+                                                <a href="tel:<?php echo $row["phone"]; ?>">
+                                                    <div class="text-primary fw-bolder mb-2 mt-2"><i class='bx bxs-phone me-2' ></i><?php echo $row["phone"]; ?></div>
+                                                </a>
+                                                <a href="<?php echo $row["site"]; ?>">
+                                                    <div class="small text-muted mb-2"><i class='bx bx-globe me-2'></i><?php echo $row["site"]; ?></div></div>
+                                                </a>
                                     </div>
                                 </div>
                             </div>
@@ -147,4 +153,7 @@
                     </div>
                 </div>
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+           <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>

@@ -6,15 +6,9 @@
 
                       session_start();
 
-                      // If the session vars aren't set, try to set them with a cookie
-                      if (!isset($_SESSION['user_id'])) {
-                        if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
-                          $_SESSION['user_id'] = $_COOKIE['user_id'];
-                          $_SESSION['username'] = $_COOKIE['username'];
-                        }
-                      }
 
                     if (isset($_POST['submit'])) {
+
                         // Grab the profile data from the POST
                         $category = mysqli_real_escape_string($conn, trim($_POST['category']));
 
@@ -28,6 +22,16 @@
                             $orphanage_category = mysqli_real_escape_string($conn, trim($_POST['orphanage_category']));
                             $orphanage_image = mysqli_real_escape_string($conn, trim($_FILES["orphanage_image"]["name"]));
                             $orphanage_location = mysqli_real_escape_string($conn, trim($_POST['orphanage_location']));
+                            $orphanage_address = mysqli_real_escape_string($conn, trim($_POST['orphanage_address']));
+                            $orphanage_phone = mysqli_real_escape_string($conn, trim($_POST['orphanage_phone']));
+                            if($_POST['orphanage_site'] == null)
+                            { 
+                                $orphanage_site = 0; 
+                            }
+                            else
+                            { 
+                                $orphanage_site = $_POST['orphanage_site']; 
+                            }
                         }
                         else
                         {
@@ -48,8 +52,10 @@
 
                             if ($category == "Orphanage") {
 
-                                $query = "INSERT INTO orphanage_tbl (orphanage_id, orphanage_name, orphanage_category, orphanage_image, orphanage_location) VALUES ('$orphanage_id', '$orphanage_name', '$orphanage_category', '$orphanage_image','$orphanage_location')";
-                            mysqli_query($conn, $query);
+                                $query = "INSERT INTO orphanage_tbl (orphanage_id, orphanage_name, orphanage_category, orphanage_image, address, phone, site,orphanage_location) VALUES ('$orphanage_id', '$orphanage_name', '$orphanage_category', '$orphanage_image','$orphanage_address','$orphanage_phone','$orphanage_site','$orphanage_location')";
+
+                               
+                                mysqli_query($conn, $query);
 
                                 if (move_uploaded_file(
                                     $_FILES["orphanage_image"]["tmp_name"],
@@ -112,7 +118,7 @@
 
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
-            <form  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
+            <form  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" id="validationCheck">
                 <div class="row">
 
                     <!-- Role -->
@@ -167,9 +173,39 @@
                             </div>
                           <div class="custom-file">
                             <input type="file" class="form-control bg-white border-left-0 border-md custom-file-input" id="inputGroupFile01" name="orphanage_image" required>
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
                           </div>
                         </div>
+
+                        <!-- Orphanage Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-address-card text-muted"></i>
+                                </span>
+                            </div>
+                            <textarea placeholder="Enter Address" id="orphanage_address" name="orphanage_address" class="form-control border-left-0 border-md" rows="1" required></textarea>
+                        </div>
+
+                        <!-- Orphanage Phone Number -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-phone text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="orphanage_phone" type="number" name="orphanage_phone" onchange="validatePhoneNumber()" placeholder="Phone Number" class="form-control bg-white border-left-0 border-md" required>
+                        </div> 
+
+                        <!-- Orphanage Site -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-globe text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="orphanage_site" type="text" name="orphanage_site" placeholder="Website Url" class="form-control bg-white border-left-0 border-md">
+                        </div> 
 
                         <!-- Orphanage Location -->
                         <div class="input-group col-lg-12 mb-4">
@@ -222,9 +258,7 @@
                                 </span>
                             </div>
                             <input id="orphanage_username" type="text" name="orphanage_username" placeholder="User Name" class="form-control bg-white border-left-0 border-md" required>
-                        </div>
-
-                        
+                        </div> 
 
                         <!-- Email Address -->
                         <div class="input-group col-lg-12 mb-4">
@@ -258,9 +292,7 @@
                                 </span>
                             </div>
                             <input id="public_username" type="text" name="publ_username" placeholder="User Name" class="form-control bg-white border-left-0 border-md"  required>
-                        </div>
-
-                        
+                        </div>  
 
                         <!-- Email Address -->
                         <div class="input-group col-lg-12 mb-4">
@@ -337,6 +369,7 @@
         orphanage.querySelectorAll('input').forEach((e)=>{e.required=true;})
         document.getElementById('orphanage_location').required = true;
         document.getElementById('orphanage_category').required = true;
+        document.querySelector("textarea").required = true;
     } else if (role.value === 'Public') {
         orphanage.style.display = "none";
         public.style.display = "block";
@@ -349,6 +382,35 @@
         orphanage.querySelectorAll('input').forEach((e)=>{e.required=false;})
         document.getElementById('orphanage_category').required = false;
         document.getElementById('orphanage_location').required = false;
+        document.querySelector("textarea").required = false;
     }
+    document.getElementById('orphanage_site').required = false;
 }
+
+    function validatePhoneNumber() {
+
+        const phoneNumber = document.getElementById('orphanage_phone').value.trim();
+
+        const pattern = /^\d{10}$/;
+
+        const isValid = pattern.test(phoneNumber);
+        if(!isValid)
+        {
+            alert('Please Enter a valid 10-digit phoneNumber');
+        }
+
+        return isValid;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+    // Event listener for form submission
+    document.getElementById('validationCheck').addEventListener('submit', function(event) {
+
+        // Validate phone number; prevent submission if invalid
+        if (!validatePhoneNumber()) {
+            event.preventDefault(); // Stops form submission for invalid number
+        }
+    });
+});
 </script>
