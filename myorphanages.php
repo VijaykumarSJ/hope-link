@@ -128,7 +128,7 @@
                                                 <div class="small fw-bolder"><?php echo $row["orphanage_name"]; ?></div>
                                             <div class="text-primary fw-bolder mb-2 mt-2"><?php echo $row["orphanage_category"]; ?></div>
                                                 <div class="small text-muted mb-2"><?php echo $row["orphanage_location"]; ?></div>
-                                                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div></div>
+                                                <div><?php echo $row["orphanage_desc"]; ?></div></div>
                                     </div>
                                 </div>
                             </div>
